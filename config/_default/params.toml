@@ -1,71 +1,53 @@
 [params]
-  # 环境：production 会让某些功能生效（如 canonical、压缩等）
-  env = "production"
+env = "production"
+title = "Capriccio"
+description = "QC-Faith 的个人笔记博客"
+keywords = ["Blog", "Notes", "PaperMod"]
+author = "QC-Faith"
+DateFormat = "2006-01-02"
 
-  title = "Capriccio"
-  description = "我还是想试试文字的力量"
-  keywords = ["Blog", "PaperMod", "Hugo", "Notes"]
-  author = "QC-Faith"
+# 夜间模式
+defaultTheme = "auto"          # auto, dark, light
+disableThemeToggle = false     # 显示主题切换按钮
 
-  # 日期格式
-  DateFormat = "2006-01-02"
+# 文章信息显示
+ShowReadingTime = true
+ShowWordCount = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowRssButtonInSectionTermList = true
+disableScrollToTop = false
+hidemeta = false
+hideSummary = false
 
-  # 夜间模式相关
-  defaultTheme = "auto"        # auto / dark / light
-  disableThemeToggle = false   # 显示切换按钮
+# 目录（TOC）
+UseHugoToc = true              # 用 Hugo 内置目录
+showtoc = true                 # 默认展示目录
+tocopen = false                # 默认不展开（想展开改成 true）
 
-  # 文章界面功能
-  ShowReadingTime = true
-  ShowBreadCrumbs = true       # 面包屑导航
-  ShowCodeCopyButtons = true
-  ShowPostNavLinks = true      # 上一篇 / 下一篇
-  ShowWordCount = true
-  ShowRssButtonInSectionTermList = true
-  UseHugoToc = true            # 用 Hugo 自带 TOC
-  showtoc = true               # 默认展示目录
-  tocopen = false              # 目录默认收起（true = 默认展开）
-  comments = false             # 🔴 关闭评论
-  hidemeta = false             # 显示作者、日期等元信息
-  hideSummary = false          # 列表页展示摘要
+# 评论总开关（你不需要评论）
+comments = false
 
-  # 首页主 Section（很关键）：你的文章目录是 content/post/
-  mainSections = ["post"]
+# 首页主内容 sections —— 这里用 "post"，你就可以继续用 content/post
+mainSections = ["post"]
 
-  # 站点图标（按需上传到 static/ 目录下）
-  [params.assets]
-    favicon = "/favicon.png"
-    favicon16x16 = "/favicon-16x16.png"
-    favicon32x32 = "/favicon-32x32.png"
-    apple_touch_icon = "/apple-touch-icon.png"
-    safari_pinned_tab = "/safari-pinned-tab.svg"
+[params.homeInfoParams]
+Title = "Hi there 👋"
+Content = "欢迎来到 Capriccio，这是 QC-Faith 的个人笔记本。"
 
-  # 顶部左侧 Logo / 文本
-  [params.label]
-    text = "Home"
-    icon = "/apple-touch-icon.png"
-    iconHeight = 35
+# 右上角 / 主页的社交图标
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/QC-Faith"
 
-  # Profile 模式（在首页显示大头像和按钮）——暂时关掉
-  [params.profileMode]
-    enabled = false
-
-  # Home-Info 模式：首页中间一段介绍
-  [params.homeInfoParams]
-    Title = "Hi, I'm Charlie 👋"
-    Content = "人生如逆旅，我亦是行人。"
-
-  # 页脚 / 侧边栏社交图标（最常用：GitHub）
-  [[params.socialIcons]]
-    name = "github"
-    url  = "https://github.com/QC-Faith"
-
-  # 搜索：Fuse.js 的配置（PaperMod 官方推荐写法的精简版）
-  [params.fuseOpts]
-    isCaseSensitive = false
-    shouldSort = true
-    location = 0
-    distance = 1000
-    threshold = 0.4
-    minMatchCharLength = 0
-    limit = 10
-    keys = ["title", "permalink", "summary", "content"]
+# 搜索配置（PaperMod 使用 Fuse.js）
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1000
+threshold = 0.4
+minMatchCharLength = 2
+limit = 10
+keys = ["title", "permalink", "summary", "content"]
