@@ -1,12 +1,15 @@
-baseURL = "https://QC-Faith.github.io/Capriccio/"
-title = "Capriccio"
-
+baseurl = "https://QC-Faith.github.io/Capriccio/"
 languageCode = "zh-cn"
+title = "Capriccio"
+theme = "PaperMod"
+
+# 默认语言与中文支持
 defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 
-paginate = 10          # 每页文章数量
-enableRobotsTXT = true # 生成 robots.txt
+paginate = 10
+enableRobotsTXT = true
 
-# 这里写 PaperMod 主题名称（虽然我们用的是 Modules，但写上也没坏处）
-theme = "PaperMod"
+# 需要 JSON 输出，PaperMod 搜索要用到 index.json 
+[outputs]
+home = ["HTML", "RSS", "JSON"]
