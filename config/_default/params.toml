@@ -1,36 +1,53 @@
-# Pages placed under these sections will be shown on homepage and archive page.
+# 哪些 section 的文章会出现在首页和归档页
+# 注意：Stack 默认文章放在 content/post/ 目录下，对应 section 名是 "post"
 mainSections = ["post"]
-# Output page's full content in RSS.
+
+# RSS 是否输出全文
 rssFullContent = true
+
+# 网站 favicon（图标）
+# 你可以把图标文件放在 static/favicon.png，这里就写 "/favicon.png"
 favicon = "/favicon.png"
 
 [footer]
-since = 2020
-customText = ""
+# 页脚年份，从你搭建博客的年份开始
+since = 2025
+# 页脚自定义文字（可留空）
+customText = "我想试试文字的力量。"
 
 [dateFormat]
-published = "Jan 02, 2006"
-lastUpdated = "Jan 02, 2006 15:04 MST"
+# 文章发布日期格式（Go 时间格式）
+# 例如：2025-11-13
+published = "2025-11-13"
+# 最后更新日期格式，例如：2025-11-13 15:04
+lastUpdated = "2025-11-13 15:04"
 
 [sidebar]
-emoji = "🍥"
-subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+# 侧边栏头像旁边的小表情
+emoji = "📒"
+# 侧边栏的副标题（自我介绍一句话）
+subtitle = "人生如逆旅，我亦是行人。"
 
 [sidebar.avatar]
 enabled = true
 local = true
+# 头像路径：如果你放在 static/img/avatar.png，这里写 "img/avatar.png"
 src = "img/avatar.png"
 
 [article]
+# 标题右侧是否显示锚点小链接（#）
 headingAnchor = false
+# 是否启用数学公式（配合 markup 的 LaTeX 设置）
 math = false
+# 是否显示“阅读时间”
 readingTime = true
 
 [article.license]
-enabled = true
+# 是否在文章底部显示版权/授权信息
+enabled = false
 default = "Licensed under CC BY-NC-SA 4.0"
 
-## Widgets
+## 首页右侧/底部组件（widgets）
 [[widgets.homepage]]
 type = "search"
 
@@ -52,6 +69,7 @@ type = "tag-cloud"
 [widgets.homepage.params]
 limit = 10
 
+# 文章页的 widget：目录
 [[widgets.page]]
 type = "toc"
 
@@ -65,7 +83,9 @@ local = false
 src = ""
 
 [colorScheme]
+# 是否显示“暗色/亮色”切换按钮
 toggle = true
+# 默认跟随系统 "auto" / 强制亮 "light" / 强制暗 "dark"
 default = "auto"
 
 [imageProcessing.cover]
@@ -74,11 +94,13 @@ enabled = true
 [imageProcessing.content]
 enabled = true
 
-## Comments
+## 评论配置
 [comments]
-enabled = true
-provider = "disqus"
+# 先整体关掉，等你确定要用哪种评论再开
+enabled = false
+provider = ""
 
+# 下面这些是各种评论系统的配置，先全部空着即可
 [comments.disqusjs]
 shortname = ""
 apiUrl = ""
