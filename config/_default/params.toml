@@ -1,172 +1,71 @@
-# 哪些 section 的文章会出现在首页和归档页
-# 注意：Stack 默认文章放在 content/post/ 目录下，对应 section 名是 "post"
-mainSections = ["post"]
+[params]
+  # 环境：production 会让某些功能生效（如 canonical、压缩等）
+  env = "production"
 
-# RSS 是否输出全文
-rssFullContent = true
+  title = "Capriccio"
+  description = "我还是想试试文字的力量"
+  keywords = ["Blog", "PaperMod", "Hugo", "Notes"]
+  author = "QC-Faith"
 
-# 网站 favicon（图标）
-# 你可以把图标文件放在 static/favicon.png，这里就写 "/favicon.png"
-favicon = "/favicon.png"
+  # 日期格式
+  DateFormat = "2006-01-02"
 
-[footer]
-# 页脚年份，从你搭建博客的年份开始
-since = 2025
-# 页脚自定义文字（可留空）
-customText = "我想试试文字的力量。"
+  # 夜间模式相关
+  defaultTheme = "auto"        # auto / dark / light
+  disableThemeToggle = false   # 显示切换按钮
 
-[dateFormat]
-# 文章发布日期格式（Go 时间格式）
-# 例如：2025-11-13
-published = "2025-11-13"
-# 最后更新日期格式，例如：2025-11-13 15:04
-lastUpdated = "2025-11-13 15:04"
+  # 文章界面功能
+  ShowReadingTime = true
+  ShowBreadCrumbs = true       # 面包屑导航
+  ShowCodeCopyButtons = true
+  ShowPostNavLinks = true      # 上一篇 / 下一篇
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true            # 用 Hugo 自带 TOC
+  showtoc = true               # 默认展示目录
+  tocopen = false              # 目录默认收起（true = 默认展开）
+  comments = false             # 🔴 关闭评论
+  hidemeta = false             # 显示作者、日期等元信息
+  hideSummary = false          # 列表页展示摘要
 
-[sidebar]
-# 侧边栏头像旁边的小表情
-emoji = "📒"
-# 侧边栏的副标题（自我介绍一句话）
-subtitle = "人生如逆旅，我亦是行人。"
+  # 首页主 Section（很关键）：你的文章目录是 content/post/
+  mainSections = ["post"]
 
-[sidebar.avatar]
-enabled = true
-local = true
-# 头像路径：如果你放在 static/img/avatar.png，这里写 "img/avatar.png"
-src = "img/avatar.png"
+  # 站点图标（按需上传到 static/ 目录下）
+  [params.assets]
+    favicon = "/favicon.png"
+    favicon16x16 = "/favicon-16x16.png"
+    favicon32x32 = "/favicon-32x32.png"
+    apple_touch_icon = "/apple-touch-icon.png"
+    safari_pinned_tab = "/safari-pinned-tab.svg"
 
-[article]
-# 标题右侧是否显示锚点小链接（#）
-headingAnchor = false
-# 是否启用数学公式（配合 markup 的 LaTeX 设置）
-math = false
-# 是否显示“阅读时间”
-readingTime = true
+  # 顶部左侧 Logo / 文本
+  [params.label]
+    text = "Home"
+    icon = "/apple-touch-icon.png"
+    iconHeight = 35
 
-[article.license]
-# 是否在文章底部显示版权/授权信息
-enabled = false
-default = "Licensed under CC BY-NC-SA 4.0"
+  # Profile 模式（在首页显示大头像和按钮）——暂时关掉
+  [params.profileMode]
+    enabled = false
 
-## 首页右侧/底部组件（widgets）
-[[widgets.homepage]]
-type = "search"
+  # Home-Info 模式：首页中间一段介绍
+  [params.homeInfoParams]
+    Title = "Hi, I'm Charlie 👋"
+    Content = "人生如逆旅，我亦是行人。"
 
-[[widgets.homepage]]
-type = "archives"
+  # 页脚 / 侧边栏社交图标（最常用：GitHub）
+  [[params.socialIcons]]
+    name = "github"
+    url  = "https://github.com/QC-Faith"
 
-[widgets.homepage.params]
-limit = 5
-
-[[widgets.homepage]]
-type = "categories"
-
-[widgets.homepage.params]
-limit = 10
-
-[[widgets.homepage]]
-type = "tag-cloud"
-
-[widgets.homepage.params]
-limit = 10
-
-# 文章页的 widget：目录
-[[widgets.page]]
-type = "toc"
-
-[opengraph.twitter]
-site = ""
-card = "summary_large_image"
-
-[defaultImage.opengraph]
-enabled = false
-local = false
-src = ""
-
-[colorScheme]
-# 是否显示“暗色/亮色”切换按钮
-toggle = true
-# 默认跟随系统 "auto" / 强制亮 "light" / 强制暗 "dark"
-default = "auto"
-
-[imageProcessing.cover]
-enabled = true
-
-[imageProcessing.content]
-enabled = true
-
-## 评论配置
-[comments]
-# 先整体关掉，等你确定要用哪种评论再开
-enabled = false
-provider = ""
-
-# 下面这些是各种评论系统的配置，先全部空着即可
-[comments.disqusjs]
-shortname = ""
-apiUrl = ""
-apiKey = ""
-admin = ""
-adminLabel = ""
-
-[comments.utterances]
-repo = ""
-issueTerm = "pathname"
-label = ""
-
-[comments.remark42]
-host = ""
-site = ""
-locale = ""
-
-[comments.vssue]
-platform = ""
-owner = ""
-repo = ""
-clientId = ""
-clientSecret = ""
-autoCreateIssue = false
-
-[comments.waline]
-serverURL = ""
-lang = ""
-visitor = ""
-avatar = ""
-emoji = ["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"]
-requiredMeta = ["name", "email", "url"]
-placeholder = ""
-
-[comments.waline.locale]
-admin = "Admin"
-
-[comments.twikoo]
-envId = ""
-region = ""
-path = ""
-lang = ""
-
-[comments.cactus]
-defaultHomeserverUrl = "https://matrix.cactus.chat:8448"
-serverName = "cactus.chat"
-siteName = ""
-
-[comments.giscus]
-repo = ""
-repoID = ""
-category = ""
-categoryID = ""
-mapping = ""
-lightTheme = ""
-darkTheme = ""
-reactionsEnabled = 1
-emitMetadata = 0
-
-[comments.gitalk]
-owner = ""
-admin = ""
-repo = ""
-clientID = ""
-clientSecret = ""
-
-[comments.cusdis]
-host = ""
-id = ""
+  # 搜索：Fuse.js 的配置（PaperMod 官方推荐写法的精简版）
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    limit = 10
+    keys = ["title", "permalink", "summary", "content"]
