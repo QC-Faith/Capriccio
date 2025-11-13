@@ -1,15 +1,17 @@
 baseurl = "https://QC-Faith.github.io/Capriccio/"
 languageCode = "zh-cn"
 title = "Capriccio"
-theme = "PaperMod"
 
 # 默认语言与中文支持
 defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 
-paginate = 10
 enableRobotsTXT = true
 
-# 需要 JSON 输出，PaperMod 搜索要用到 index.json 
+
+[pagination]
+pagerSize = 10
+
+# ✅ PaperMod 搜索需要 home 输出 JSON
 [outputs]
 home = ["HTML", "RSS", "JSON"]
