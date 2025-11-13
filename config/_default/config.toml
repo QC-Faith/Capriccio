@@ -1,18 +1,22 @@
-# Change baseurl before deploy
-baseurl = "https://demo.stack.jimmycai.com"
-languageCode = "en-us"
-title = "Hugo Theme Stack Starter"
+# 部署到 GitHub Pages 的地址
+baseurl = "https://QC-Faith.github.io/Capriccio/"
 
-# Theme i18n support
-# Available values: en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk, ar
-defaultContentLanguage = "en"
+# 页面语言（影响 <html lang="..."> 和 SEO）
+languageCode = "zh-cn"
 
-# Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
-# This will make .Summary and .WordCount behave correctly for CJK languages.
-hasCJKLanguage = false
+# 左侧标题 & 浏览器标题
+title = "Capriccio"
 
-# Change it to your Disqus shortname before using
-disqusShortname = "hugo-theme-stack"
+# 主题的多语言支持：默认语言
+# 支持：en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk, ar
+defaultContentLanguage = "zh-cn"
+
+# 中文 / 日文 / 韩文要设为 true，WordCount / Summary 等才会正常
+hasCJKLanguage = true
+
+# Disqus 评论的短域名（你不用 Disqus，就留空）
+disqusShortname = ""
 
 [pagination]
-pagerSize = 5
+# 每页显示多少文章
+pagerSize = 10
