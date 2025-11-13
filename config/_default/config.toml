@@ -1,22 +1,12 @@
-# 部署到 GitHub Pages 的地址
-baseurl = "https://QC-Faith.github.io/Capriccio/"
-
-# 页面语言（影响 <html lang="..."> 和 SEO）
-languageCode = "zh-cn"
-
-# 左侧标题 & 浏览器标题
+baseURL = "https://QC-Faith.github.io/Capriccio/"
 title = "Capriccio"
 
-# 主题的多语言支持：默认语言
-# 支持：en, fr, id, ja, ko, pt-br, zh-cn, zh-tw, es, de, nl, it, th, el, uk, ar
+languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
-
-# 中文 / 日文 / 韩文要设为 true，WordCount / Summary 等才会正常
 hasCJKLanguage = true
 
-# Disqus 评论的短域名（你不用 Disqus，就留空）
-disqusShortname = ""
+paginate = 10          # 每页文章数量
+enableRobotsTXT = true # 生成 robots.txt
 
-[pagination]
-# 每页显示多少文章
-pagerSize = 10
+# 这里写 PaperMod 主题名称（虽然我们用的是 Modules，但写上也没坏处）
+theme = "PaperMod"
