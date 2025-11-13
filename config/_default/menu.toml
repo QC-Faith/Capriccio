@@ -1,26 +1,25 @@
-# Configure main menu and social menu
+[menu]
 
-# 想在顶部导航加“首页 / 归档 / 关于”等，可以在这里启用 main 菜单
-# 示例：
-# [[main]]
-# identifier = "home"
-# name = "首页"
-# url = "/"
-# [main.params]
-# icon = "home"
-# newtab = false
+  [[menu.main]]
+  identifier = "archives"
+  name = "归档"
+  url = "/archives/"
+  weight = 10
 
-[[social]]
-identifier = "github"
-name = "GitHub"
-url = "https://github.com/QC-Faith"
-[social.params]
-icon = "brand-github"
+  [[menu.main]]
+  identifier = "categories"
+  name = "分类"
+  url = "/categories/"
+  weight = 20
 
-# 没有 Twitter 或暂时不用就先注释掉
-# [[social]]
-# identifier = "twitter"
-# name = "Twitter"
-# url = "https://twitter.com"
-# [social.params]
-# icon = "brand-twitter"
+  [[menu.main]]
+  identifier = "tags"
+  name = "标签"
+  url = "/tags/"
+  weight = 30
+
+  [[menu.main]]
+  identifier = "search"
+  name = "搜索"
+  url = "/search/"
+  weight = 40
